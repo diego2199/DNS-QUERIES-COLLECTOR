@@ -1,0 +1,8 @@
+18-May-2021 16:34:13.003 queries: info: client @0x55adcc672cc0 45.231.61.2#80 (pizzaseo.com): query: pizzaseo.com IN A +E(0)D (172.20.101.44)
+18-May-2021 16:34:14.004 queries: info: client @0x55adcc672cc0 179.0.4.14#80 (example.com): query: example.com IN A +E(0)D (172.20.101.44)
+18-May-2021 16:34:15.005 queries: info: client @0x55adcc672cc0 76.237.82.109#80 (anotherdomain.com): query: anotherdomain.com IN A +E(0)D (172.20.101.44)
+18-May-2021 16:34:16.006 queries: info: client @0x55adcc672cc0 87.190.45.164#80 (test.com): query: test.com IN A +E(0)D (172.20.101.44)
+18-May-2021 16:34:17.007 queries: info: client @0x55adcc672cc0 45.238.196.2#80 (sampledomain.com): query: sampledomain.com IN A +E(0)D (172.20.101.44)
+18-May-2021 16:34:18.008 queries: info: client @0x55adcc672cc0 186.117.159.151#80 (mywebsite.com): query: mywebsite.com IN A +E(0)D (172.20.101.44)
+18-May-2021 16:34:19.009 queries: info: client @0x55adcc672cc0 179.0.4.14#80 (example.com): query: example.com IN A +E(0)D (172.20.101.44)
+18-May-2021 16:34:20.010 queries: info: client @0x55adcc672cc0 45.231.61.2#80 (pizzaseo.com): query: pizzaseo.com IN A +E(0)D (172.20.101.44)
