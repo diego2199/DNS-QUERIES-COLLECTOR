@@ -1,7 +1,7 @@
 #librerias
 import requests
 import re
-from collections import Counter
+#from collections import Counter
 from datetime import datetime
 #constantes
 LUMU_CLIENT_KEY = "d39a0f19-7278-4a64-a255-b7646d1ace80"
@@ -46,21 +46,50 @@ def generate_statistics(client_ips, hosts): #funcion para generar las estadistic
     total_records = len(client_ips)
    
     # Contar y ordenar IPs y Hosts
-    ip_count = Counter(client_ips).most_common()
-    host_count = Counter(hosts).most_common()
+    # ip_count = Counter(client_ips).most_common()
+    # host_count = Counter(hosts).most_common()
+    # Contar ocurrencias de IPs manualmente
+    ip_count = {}
+    for ip in client_ips:
+        if ip in ip_count:
+            ip_count[ip] += 1
+        else:
+            ip_count[ip] =1
 
+    # Contar ocurrencias de Host manualmente
+    host_count = {}
+    for host in hosts:
+        if host in host_count:
+            host_count[host] += 1
+        else:
+            host_count[host] = 1
+
+    #Ordenar las IPs por cantidad de ocurrecia (desendente)
+    sorted_ips = []
+    for ip, count in ip_count.items():
+        sorted_ips.append((ip,count))
+        sorted_ips.sort(key=lambda x: x[1], reverse=True)
+
+    #Ordenar las IPs por cantidad de ocurrecia (desendente)
+    sorted_hosts = []
+    for host, count in host_count.items():
+        sorted_hosts.append((host,count))
+        sorted_hosts.sort(key=lambda x:x[1], reverse=True)
+
+    #Mostrar total de records
     print(f"Total records {total_records}")
+    #Mostrar las estadisticas de las IPs clientes
     print("\nClient IPs Rank")
     print("--------------- --- -----")
-    for ip, count in ip_count:
+    for ip, count in sorted_ips:
         percentage = (count / total_records) * 100
-        print(f"{ip: <15} {count: <5} {percentage:.2f}%")
-
+        print(f"IP: {ip}, Ocurrencias: {count}, Porcentaje: {percentage:.2f}%")
+    #Mostrar las estadisticas de los Hosts consultados
     print("\nHost Rank")
     print("------------------------------------------------------------ --- -----")
-    for host, count in host_count:
+    for host, count in sorted_hosts:
         percentage = (count / total_records) * 100
-        print(f"{host: <60} {count: <5} {percentage:.2f}%")
+        print(f"Host: {host}, Ocurrencia: {count}, Porcentaje: {percentage:.2f}%")
 
 def main(file_path): #funcion principal del programa
     timestamps, client_ips, hosts = parse_log(file_path)

@@ -72,6 +72,7 @@ Verifica la respuesta y reporta cualquier error en el envío.
 4. generate_statistics:
 
 Genera un resumen de las IPs y hosts más comunes.
+Nota: se modifico con respecto a la primera para entender mejor el uso del metodo counters de la libreria collections, usando for y sorted para llevar acabo el conteo y la organizacion de las IPS y los host más comunes.
 
 Muestra el total de registros y el porcentaje de ocurrencias de cada IP y host.
 
