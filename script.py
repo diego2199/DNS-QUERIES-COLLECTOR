@@ -70,7 +70,7 @@ def generate_statistics(client_ips, hosts): #funcion para generar las estadistic
         sorted_ips.append((ip,count))
         sorted_ips.sort(key=lambda x: x[1], reverse=True)
 
-    #Ordenar las IPs por cantidad de ocurrecia (desendente)
+    #Ordenar las Host por cantidad de ocurrecia (desendente)
     sorted_hosts = []
     for host, count in host_count.items():
         sorted_hosts.append((host,count))
